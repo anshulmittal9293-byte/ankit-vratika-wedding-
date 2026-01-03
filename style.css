@@ -103,3 +103,22 @@
     padding:24px 12px;
   }
 }
+.hero{
+  min-height:100vh;
+  background:linear-gradient(
+    to bottom,
+    #1e293b,
+    #0f172a
+  );
+}
+.journey-img{
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+
+.enter-btn{
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
+  color:#000;
+}
+
+
+
