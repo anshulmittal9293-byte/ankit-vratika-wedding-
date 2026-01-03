@@ -1,141 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>DJ Night | Ankit & Vratika</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Night</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 body{
-  margin:0;
-  font-family:Georgia, serif;
-  min-height:100vh;
+  margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;
+  font-family:Arial;text-align:center;color:#f3f1e7;
   background:
-    linear-gradient(
-      rgba(15,15,15,0.75),
-      rgba(40,20,60,0.85)
-    ),
-    url("https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
-  color:#fff;
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url("assets/dj.jpg") center/cover no-repeat;
 }
-
-.wrapper{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+.box{
+  background:rgba(0,0,0,.45);
+  padding:32px;border-radius:22px;
+  width:90%;max-width:520px;
 }
+h1{color:#f5d76e;letter-spacing:1px;}
+p{font-size:17px;line-height:1.6;}
 
-h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-.date{
-  font-size:20px;
-  margin-bottom:6px;
-}
-
-.venue{
-  font-size:18px;
-  margin-bottom:25px;
-}
-
-.buttons{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-bottom:25px;
-}
-
-.btn{
-  padding:14px 30px;
-  border-radius:30px;
+a.btn{
+  display:inline-block;margin:10px 6px;
+  padding:12px 26px;border-radius:25px;
   background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:#000;
-  text-decoration:none;
-  font-size:18px;
+  color:black;text-decoration:none;font-weight:bold;
 }
 
-.countdown{
-  display:flex;
-  gap:16px;
-  justify-content:center;
+.timer{display:flex;gap:14px;justify-content:center;margin-top:18px;}
+.timer div{
+  background:rgba(212,175,55,.18);
+  border:1px solid rgba(212,175,55,.6);
+  padding:12px;border-radius:12px;min-width:70px;
 }
-
-.countdown div{
-  background:rgba(0,0,0,0.5);
-  padding:12px 16px;
-  border-radius:12px;
-}
-
-.countdown span{
-  font-size:22px;
-  display:block;
-}
-
-@media(max-width:600px){
-  h1{font-size:30px;}
-  .date,.venue{font-size:16px;}
-}
+.timer span{display:block;font-size:22px;color:#ffd700;font-weight:bold;}
 </style>
 </head>
 
 <body>
+<div class="box">
+<h1>DJ Night 🎧</h1>
+<p>3 February 2026 | 7:00 PM – 11:00 PM</p>
+<p>Hotel Bravura Gold Resort, Meerut</p>
 
-<div class="wrapper">
-  <h1>DJ Night 🎧</h1>
+<a class="btn" target="_blank" href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">📍 Location</a>
+<a class="btn" href="ring.html">Next → Ring 💍</a>
 
-  <div class="date"><strong>3 February 2026</strong></div>
-  <div class="date">7:00 PM – 11:00 PM</div>
-
-  <div class="venue">
-    📍 Hotel Bravura Gold Resort, Meerut
-  </div>
-
-  <div class="buttons">
-    <a class="btn" target="_blank"
-       href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">
-       📍 Open Location
-    </a>
-
-    <a class="btn" href="ring.html">
-      Next → Ring Ceremony 💍
-    </a>
-  </div>
-
-  <div class="countdown">
-    <div><span id="days">00</span>Days</div>
-    <div><span id="hours">00</span>Hours</div>
-    <div><span id="minutes">00</span>Minutes</div>
-  </div>
+<div class="timer">
+<div><span id="d"></span>Days</div>
+<div><span id="h"></span>Hours</div>
+<div><span id="m"></span>Min</div>
+</div>
 </div>
 
 <script>
-const eventTime = new Date("2026-02-03T19:00:00+05:30").getTime();
+const t=new Date("2026-02-03T19:00:00+05:30").getTime();
 setInterval(()=>{
-  const now = new Date().getTime();
-  const d = eventTime - now;
-
-  if(d<0) return;
-
-  document.getElementById("days").innerText =
-    Math.floor(d/(1000*60*60*24));
-  document.getElementById("hours").innerText =
-    Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("minutes").innerText =
-    Math.floor((d%(1000*60*60))/(1000*60));
+let x=t-Date.now();
+d.innerText=Math.floor(x/86400000);
+h.innerText=Math.floor((x%86400000)/3600000);
+m.innerText=Math.floor((x%3600000)/60000);
 },1000);
 </script>
-
 </body>
 </html>
+
+
 
 
 
