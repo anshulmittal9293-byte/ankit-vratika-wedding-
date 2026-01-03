@@ -154,5 +154,88 @@
   }
 }
 
+/* ================= DJ HERO PAGE ================= */
+
+.dj-hero{
+  min-height:100vh;
+  background:url("assets/dj.jpg") center/cover no-repeat;
+}
+
+.dj-overlay{
+  min-height:100vh;
+  background:linear-gradient(
+    rgba(15,15,15,0.75),
+    rgba(40,20,60,0.85)
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.dj-content{
+  max-width:700px;
+  padding:40px 20px;
+}
+
+.dj-title{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.dj-date, .dj-venue{
+  font-size:18px;
+  margin:8px 0;
+}
+
+/* Buttons */
+.dj-buttons{
+  margin:25px 0;
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.gold-btn{
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
+  color:#000;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+.gold-btn.outline{
+  background:transparent;
+  border:2px solid #d4af37;
+  color:#d4af37;
+}
+
+/* Countdown */
+.countdown.big{
+  margin-top:25px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
+.countdown.big div{
+  background:rgba(0,0,0,0.4);
+  padding:12px 16px;
+  border-radius:12px;
+}
+
+.countdown.big span{
+  font-size:22px;
+  display:block;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .dj-title{font-size:30px;}
+  .dj-date,.dj-venue{font-size:16px;}
+}
 
 
