@@ -1,99 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Ring Ceremony | Ankit & Vratika</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Ring Ceremony</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:Georgia, serif;
-  background:linear-gradient(135deg,#3b1d5a,#6a2c70);
-  color:white;
-  text-align:center;
+  margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;
+  text-align:center;font-family:Arial;color:white;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url("assets/ring.jpg") center/cover no-repeat;
 }
-
-.container{
-  background:rgba(0,0,0,0.45);
-  padding:35px 25px;
-  border-radius:22px;
-  max-width:520px;
-  width:90%;
-}
-
-h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.date{
-  font-size:20px;
-  margin:6px 0;
-}
-
-.venue{
-  font-size:18px;
-  margin:14px 0 22px;
-}
-
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
-}
-
-.btn{
-  text-decoration:none;
-  padding:14px 28px;
-  border-radius:30px;
-  font-size:18px;
-  background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:black;
-  font-weight:bold;
-}
-
-.btn.outline{
-  background:transparent;
-  border:2px solid #d4af37;
-  color:#d4af37;
-}
-
-@media(max-width:600px){
-  h1{font-size:30px;}
-  .date,.venue{font-size:16px;}
-}
+.box{background:rgba(0,0,0,.5);padding:30px;border-radius:20px;width:90%;max-width:500px;}
+a{display:inline-block;margin-top:15px;padding:12px 24px;background:gold;color:black;text-decoration:none;border-radius:25px;font-weight:bold;}
+.timer{display:flex;gap:15px;justify-content:center;margin-top:20px;}
+.timer div{background:black;padding:10px;border-radius:10px;}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-  <h1>Ring Ceremony 💍</h1>
-
-  <div class="date"><strong>4 February 2026</strong></div>
-  <div class="date">10:00 AM – 4:00 PM</div>
-
-  <div class="venue">
-    📍 Hotel Bravura Gold Resort, Meerut
-  </div>
-
-  <div class="buttons">
-    <a class="btn" target="_blank"
-       href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">
-       📍 Open Location
-    </a>
-
-    <a class="btn outline" href="wedding.html">
-      Next → Wedding Night 💒
-    </a>
-  </div>
+<div class="box">
+<h1>Ring Ceremony 💍</h1>
+<p>4 February 2026 | 10:00 AM – 4:00 PM</p>
+<p>Hotel Bravura Gold Resort, Meerut</p>
+<a target="_blank" href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">📍 Open Location</a>
+<div class="timer">
+<div><span id="d"></span>Days</div>
+<div><span id="h"></span>Hours</div>
+<div><span id="m"></span>Min</div>
 </div>
-
+</div>
+<script>
+const t=new Date("2026-02-04T10:00:00+05:30").getTime();
+setInterval(()=>{let n=Date.now(),x=t-n;
+d.innerText=Math.floor(x/86400000);
+h.innerText=Math.floor((x%86400000)/3600000);
+m.innerText=Math.floor((x%3600000)/60000);},1000);
+</script>
 </body>
 </html>
+
