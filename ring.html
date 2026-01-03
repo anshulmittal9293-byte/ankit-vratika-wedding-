@@ -4,39 +4,55 @@
 <meta charset="UTF-8">
 <title>Ring Ceremony</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body{
   margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;
-  text-align:center;font-family:Arial;color:white;
+  font-family:Arial;text-align:center;color:#f3f1e7;
   background:
     linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
     url("assets/ring.jpg") center/cover no-repeat;
 }
-.box{background:rgba(0,0,0,.5);padding:30px;border-radius:20px;width:90%;max-width:500px;}
-a{display:inline-block;margin-top:15px;padding:12px 24px;background:gold;color:black;text-decoration:none;border-radius:25px;font-weight:bold;}
-.timer{display:flex;gap:15px;justify-content:center;margin-top:20px;}
-.timer div{background:black;padding:10px;border-radius:10px;}
+.box{background:rgba(0,0,0,.45);padding:32px;border-radius:22px;width:90%;max-width:520px;}
+h1{color:#f5d76e;}
+p{font-size:17px;}
+
+a.btn{display:inline-block;margin:10px 6px;padding:12px 26px;border-radius:25px;
+background:linear-gradient(135deg,#d4af37,#f5d76e);color:black;text-decoration:none;font-weight:bold;}
+
+.timer{display:flex;gap:14px;justify-content:center;margin-top:18px;}
+.timer div{background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.6);
+padding:12px;border-radius:12px;min-width:70px;}
+.timer span{font-size:22px;color:#ffd700;font-weight:bold;}
 </style>
 </head>
+
 <body>
 <div class="box">
 <h1>Ring Ceremony 💍</h1>
 <p>4 February 2026 | 10:00 AM – 4:00 PM</p>
 <p>Hotel Bravura Gold Resort, Meerut</p>
-<a target="_blank" href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">📍 Open Location</a>
+
+<a class="btn" target="_blank" href="https://maps.app.goo.gl/ov7T9VT1w4aH7rnC8?g_st=ac">📍 Location</a>
+<a class="btn" href="wedding.html">Next → Wedding 💒</a>
+
 <div class="timer">
 <div><span id="d"></span>Days</div>
 <div><span id="h"></span>Hours</div>
 <div><span id="m"></span>Min</div>
 </div>
 </div>
+
 <script>
 const t=new Date("2026-02-04T10:00:00+05:30").getTime();
-setInterval(()=>{let n=Date.now(),x=t-n;
+setInterval(()=>{
+let x=t-Date.now();
 d.innerText=Math.floor(x/86400000);
 h.innerText=Math.floor((x%86400000)/3600000);
-m.innerText=Math.floor((x%3600000)/60000);},1000);
+m.innerText=Math.floor((x%3600000)/60000);
+},1000);
 </script>
 </body>
 </html>
+
 
