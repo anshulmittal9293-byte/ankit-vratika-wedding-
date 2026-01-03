@@ -1,26 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Ankit & Vratika</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Ankit & Vratika</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-family:Arial;
+  color:#f3f1e7;
+
+  /* 🌸 SOFT ELEGANT BACKGROUND */
+  background:linear-gradient(
+    135deg,
+    #3a1c71,
+    #d76d77,
+    #ffaf7b
+  );
+}
+
+.box{
+  background:rgba(0,0,0,0.35);
+  padding:35px;
+  border-radius:26px;
+  width:90%;
+  max-width:550px;
+}
+
+h1{
+  color:#f5d76e;
+  font-size:40px;
+  letter-spacing:1px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.6;
+}
+
+img{
+  width:100%;
+  border-radius:18px;
+  margin:22px 0;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+a.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 30px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:18px;
+}
+
+@media(max-width:600px){
+  h1{font-size:30px;}
+  p{font-size:16px;}
+}
+</style>
 </head>
 
-<body class="hero">
+<body>
 
-  <div class="overlay fade hero-center">
-    <h1 class="main-title">Ankit & Vratika</h1>
-    <p class="subtitle">Together Forever 💍</p>
+<div class="box">
+  <h1>Ankit ❤️ Vratika</h1>
+  <p>Together Forever</p>
 
-    <!-- Journey Image -->
-    <img src="assets/journey.jpg" alt="Journey" class="journey-img big">
+  <!-- Journey Image -->
+  <img src="assets/journey.jpg" alt="Journey">
 
-    <!-- CTA Button -->
-    <a href="dj.html" class="btn enter-btn">
-      ✨ Enter the Celebration ✨
-    </a>
-  </div>
+  <a class="btn" href="dj.html">
+    ✨ Enter the Celebration ✨
+  </a>
+</div>
 
 </body>
 </html>
