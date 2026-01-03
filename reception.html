@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reception</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#2b5876;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+}
+.box{
+  background:rgba(0,0,0,0.5);
+  padding:30px;
+  border-radius:20px;
+  width:90%;
+  max-width:500px;
+}
+a{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 24px;
+  background:gold;
+  color:black;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+}
+.timer{display:flex;gap:15px;justify-content:center;margin-top:20px;}
+.timer div{background:black;padding:10px;border-radius:10px;}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h1>Reception 🎉</h1>
+<p>6 February 2026 | 11:00 AM</p>
+<p>Khizrabad, Yamunanagar</p>
+
+<a target="_blank" href="https://maps.google.com/?q=Khizrabad+Yamunanagar">
+📍 Open Location
+</a>
+
+<div class="timer">
+<div><span id="d"></span>Days</div>
+<div><span id="h"></span>Hours</div>
+<div><span id="m"></span>Min</div>
+</div>
+</div>
+
+<script>
+const t=new Date("2026-02-06T11:00:00+05:30").getTime();
+setInterval(()=>{
+let n=new Date().getTime(),x=t-n;
+document.getElementById("d").innerText=Math.floor(x/86400000);
+document.getElementById("h").innerText=Math.floor((x%86400000)/3600000);
+document.getElementById("m").innerText=Math.floor((x%3600000)/60000);
+},1000);
+</script>
+</body>
+</html>
 
