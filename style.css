@@ -1,50 +1,73 @@
-.dj-hero{
-  background:red !important;
-}
-
-
-
-
-
+/* ================= RESET ================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Georgia, serif;
 }
 
-/* Base */
-.hero{
-  min-height:100vh;
-  background:#000;
-}
-
-.overlay{
-  min-height:100vh;
-  background:rgba(0,0,0,0.65);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+body{
+  font-family: "Georgia", serif;
   color:#fff;
+}
+
+/* ================= COMMON BUTTON ================= */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:30px;
+  font-size:18px;
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
+  color:#000;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ================= COUNTDOWN ================= */
+.countdown{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-top:25px;
+}
+
+.countdown div{
+  background:rgba(0,0,0,0.45);
+  padding:12px 16px;
+  border-radius:12px;
   text-align:center;
 }
 
-.fade{
-  animation:fade 1.2s ease;
+.countdown span{
+  font-size:22px;
+  display:block;
 }
 
-@keyframes fade{
-  from{opacity:0}
-  to{opacity:1}
+/* ================= INDEX PAGE ================= */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(
+    135deg,
+    #1c1c1c,
+    #2b1b3a,
+    #3a2b1b
+  );
 }
 
-/* Center content */
 .hero-center{
+  min-height:100vh;
+  display:flex;
   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
   padding:40px 20px;
 }
 
-/* Text */
 .main-title{
   font-size:48px;
   letter-spacing:2px;
@@ -52,118 +75,18 @@
 
 .subtitle{
   font-size:20px;
-  margin-top:8px;
-  margin-bottom:24px;
+  margin:10px 0 25px;
 }
 
-/* Image */
-.journey-img.big{
+.journey-img{
   width:1100px;
   max-width:95%;
   border-radius:20px;
-  margin:24px 0 28px;
+  margin:25px 0 30px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
 }
 
-/* Button */
-.btn{
-  display:inline-block;
-  background:#d4af37;
-  color:#000;
-  text-decoration:none;
-  padding:16px 40px;
-  border-radius:32px;
-  font-size:20px;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 30px rgba(0,0,0,.4);
-}
-
-.enter-btn{
-  margin-top:10px;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width:600px){
-  .main-title{
-    font-size:28px;
-  }
-
-  .subtitle{
-    font-size:16px;
-    margin-bottom:16px;
-  }
-
-  .journey-img.big{
-    width:100%;
-    margin:16px 0 20px;
-  }
-
-  .enter-btn{
-    width:90%;
-    padding:14px 28px;
-    font-size:18px;
-  }
-
-  .hero-center{
-    padding:24px 12px;
-  }
-}
-.hero{
-  min-height:100vh;
-  background:linear-gradient(
-    to bottom,
-    #1e293b,
-    #0f172a
-  );
-}
-.journey-img{
-  box-shadow:0 20px 50px rgba(0,0,0,0.4);
-}
-
-.enter-btn{
-  background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:#000;
-}
-/* DJ Page Aesthetic */
-.dj-overlay{
-  background:linear-gradient(
-    to bottom,
-    rgba(28,28,28,0.75),
-    rgba(43,27,58,0.85)
-  );
-}
-
-.event-title{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.date, .venue{
-  font-size:18px;
-  margin:6px 0;
-}
-
-.gold-btn{
-  background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:#000;
-}
-
-/* Mobile polish */
-@media(max-width:600px){
-  .event-title{
-    font-size:28px;
-  }
-
-  .date, .venue{
-    font-size:16px;
-  }
-}
-
-/* ================= DJ HERO PAGE ================= */
-
+/* ================= DJ NIGHT PAGE ================= */
 .dj-hero{
   min-height:100vh;
   background:url("assets/dj.jpg") center/cover no-repeat;
@@ -179,7 +102,6 @@
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:#fff;
 }
 
 .dj-content{
@@ -192,12 +114,12 @@
   margin-bottom:10px;
 }
 
-.dj-date, .dj-venue{
+.dj-date,
+.dj-venue{
   font-size:18px;
-  margin:8px 0;
+  margin:6px 0;
 }
 
-/* Buttons */
 .dj-buttons{
   margin:25px 0;
   display:flex;
@@ -206,44 +128,67 @@
   flex-wrap:wrap;
 }
 
-.gold-btn{
-  background:linear-gradient(135deg,#d4af37,#f5d76e);
-  color:#000;
-  padding:14px 28px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:18px;
+/* ================= RING / WEDDING / RECEPTION ================= */
+.bg{
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
 }
 
-.gold-btn.outline{
-  background:transparent;
-  border:2px solid #d4af37;
-  color:#d4af37;
+.ring{
+  background:url("assets/ring.jpg") center/cover no-repeat;
 }
 
-/* Countdown */
-.countdown.big{
-  margin-top:25px;
+.wedding{
+  background:url("assets/wedding.jpg") center/cover no-repeat;
+}
+
+.reception{
+  background:url("assets/reception.jpg") center/cover no-repeat;
+}
+
+.overlay{
+  min-height:100vh;
+  background:rgba(0,0,0,0.65);
   display:flex;
-  gap:20px;
+  flex-direction:column;
   justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
 }
 
-.countdown.big div{
-  background:rgba(0,0,0,0.4);
-  padding:12px 16px;
-  border-radius:12px;
-}
-
-.countdown.big span{
-  font-size:22px;
-  display:block;
-}
-
-/* Mobile */
+/* ================= MOBILE RESPONSIVE ================= */
 @media(max-width:600px){
-  .dj-title{font-size:30px;}
-  .dj-date,.dj-venue{font-size:16px;}
+
+  .main-title,
+  .dj-title{
+    font-size:28px;
+  }
+
+  .subtitle{
+    font-size:16px;
+  }
+
+  .journey-img{
+    width:100%;
+    margin:20px 0;
+  }
+
+  .btn{
+    font-size:16px;
+    padding:12px 26px;
+  }
+
+  .dj-date,
+  .dj-venue{
+    font-size:16px;
+  }
+
+  .countdown span{
+    font-size:18px;
+  }
 }
+
 
 
